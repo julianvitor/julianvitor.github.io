@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Backend</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e7cdb;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-radius: 8px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .app-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .app-card {
+            width: 30%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .app-card:hover {
+    transform: scale(1.1);
+    box-shadow: 20px rgba(0, 0, 0, 0.1); /* Adicionei uma sombra sutil durante a animação */
+}
+
+
+        .app-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .app-details {
+            padding: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Meu Portfólio Backend</h1>
+    </header>
+
+    <section class="category">
+        <h2>API</h2>
+        <div class="app-gallery">
+            <div class="app-card">
+                <img src="https://as2.ftcdn.net/v2/jpg/02/14/82/11/1000_F_214821191_v4SjAdT8V4KfHYZka47S9WssLrXJ30Rp.jpg" alt="API 1">
+                <div class="app-details">
+                    <h3>API 1</h3>
+                    <p>Descrição da API 1.</p>
+                </div>
+            </div>
+
+            <div class="app-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/100/100662.png" alt="API 2">
+                <div class="app-details">
+                    <h3>API 2</h3>
+                    <p>Descrição da API 2.</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Bibliotecas</h2>
+        <div class="app-gallery">
+            <div class="app-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/100/100662.png" alt="Biblioteca 1">
+                <div class="app-details">
+                    <h3>Biblioteca 1</h3>
+                    <p>Descrição da Biblioteca 1.</p>
+                </div>
+            </div>
+
+            <div class="app-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/100/100662.png" alt="Biblioteca 2">
+                <div class="app-details">
+                    <h3>Biblioteca 2</h3>
+                    <p>Descrição da Biblioteca 2.</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Embarcado</h2>
+        <div class="app-gallery">
+            <div class="app-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/100/100662.png" alt="Embarcado 1">
+                <div class="app-details">
+                    <h3>Embarcado 1</h3>
+                    <p>Descrição do sistema embarcado 1.</p>
+                </div>
+            </div>
+
+            <div class="app-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/100/100662.png" alt="Embarcado 2">
+                <div class="app-details">
+                    <h3>Embarcado 2</h3>
+                    <p>Descrição do sistema embarcado 2.</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Meu Portfólio Backend</p>
+    </footer>
+</body>
+
+</html>
