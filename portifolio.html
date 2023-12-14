@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Backend</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        header {
+            background-color: #2e7cdb;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            border-radius: 8px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+            .app-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Ou space-between ou outro valor conforme necessário */
+            }
+
+        .app-card {
+            width: 30%;
+            margin-bottom: 10px; /* Reduza o espaçamento vertical entre os cards */
+            margin-right: 10px; /* Adicione ou ajuste o espaçamento horizontal entre os cards */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .app-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .app-details {
+            padding: 15px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .overlay p {
+            color: #fff;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .toggle-mode {
+            position: fixed;
+            top: 2px; 
+            cursor: pointer;
+            z-index: 2;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 6px; 
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toggle-mode" onclick="toggleDarkMode()">Dark</div>
+
+    <header>
+        <h1>Meu Portfólio Backend</h1>
+    </header>
+
+    <section class="category">
+        <h2>API</h2>
+        <div class="app-gallery">
+            <div class="app-card" onclick="showDescription('API 1', 'Descrição da API 1.')">
+                <img src="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/fastapi-900x0.png" alt="API 1">
+                <div class="app-details">
+                    <h3>API 1</h3>
+                    <p>Descrição da API 1.</p>
+                </div>
+            </div>
+
+            <div class="app-card" onclick="showDescription('API 2', 'Descrição da API 2.')">
+                <img src="https://cdn-icons-png.flaticon.com/512/100/100662.png" alt="API 2">
+                <div class="app-details">
+                    <h3>API 2</h3>
+                    <p>Descrição da API 2.</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Bibliotecas</h2>
+        <div class="app-gallery">
+            <div class="app-card" onclick="showDescription('Biblioteca 1', 'Descrição da Biblioteca 1.')">
+                <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" alt="Biblioteca 1">
+                <div class="app-details">
+                    <h3>Biblioteca 1</h3>
+                    <p>Descrição da Biblioteca 1.</p>
+                </div>
+            </div>
+
+            <div class="app-card" onclick="showDescription('Biblioteca 2', 'Descrição da Biblioteca 2.')">
+                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/c_original_logo_icon_146611.png" alt="Biblioteca 2">
+                <div class="app-details">
+                    <h3>Biblioteca 2</h3>
+                    <p>Descrição da Biblioteca 2.</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Embarcado</h2>
+        <div class="app-gallery">
+            <div class="app-card" onclick="showDescription('Embarcado 1', 'Descrição do sistema embarcado 1.')">
+                <img src="https://download.logo.wine/logo/Raspberry_Pi/Raspberry_Pi-Logo.wine.png" alt="Embarcado 1">
+                <div class="app-details">
+                    <h3>Embarcado 1</h3>
+                    <p>Descrição do sistema embarcado 1.</p>
+                </div>
+            </div>
+
+            <div class="app-card" onclick="showDescription('Embarcado 2', 'Descrição do sistema embarcado 2.')">
+                <img src="https://download.logo.wine/logo/ARM_architecture/ARM_architecture-Logo.wine.png" alt="Embarcado 2">
+                <div class="app-details">
+                    <h3>Embarcado 2</h3>
+                    <p>Descrição do sistema embarcado 2.</p>
+                </div>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
+        </div>
+    </section>
+
+    <div class="overlay" onclick="hideDescription()">
+        <p id="descriptionText"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Meu Portfólio Backend</p>
+    </footer>
+
+    <script>
+        function showDescription(title, description) {
+            document.getElementById('descriptionText').innerText = `${title}: ${description}`;
+            document.querySelector('.overlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideDescription() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+
+</html>
