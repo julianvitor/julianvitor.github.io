@@ -41,11 +41,11 @@ section {
 /* Estilos para os cards de aplicativos */
 .app-card {
     width: 100%;
-    max-width: 100px;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
+    max-width: 150px;
 }
 
 .app-card:hover {
