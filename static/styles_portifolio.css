@@ -27,15 +27,6 @@ body.dark-mode {
     color: #ffffff;
 }
 
-/* Estilos para a seção de aplicativos */
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #333333;
-}
-
 section {
     margin: 20px 0;
 }
@@ -52,7 +43,6 @@ section {
     width: 100%;
     max-width: 150px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
@@ -61,13 +51,12 @@ section {
 
 .app-card:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(73, 73, 73, 0.1);
 }
 
 .app-card img {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
 }
 
 .app-details {
@@ -203,9 +192,8 @@ h2 {
     background-color: #dddddd;
     box-shadow: 0 0 100px 2px rgba(0, 122, 255, 0.3);
     border-radius: 16px;
-    padding: 20px;
     width: 100%;
-    max-width: 320px;
+    max-width: 500px;
 }
 
 .container.dark-mode {
@@ -220,4 +208,5 @@ h2 {
 .center-container {
     margin: 10px auto;
     top: 0px;
+    padding: 15px 15px 15px;
 }
