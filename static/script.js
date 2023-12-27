@@ -79,7 +79,7 @@ class GardenApp {
 
     fetchAndUpdateSensorData() {
         // Busca e Atualização de Dados do Sensor
-        fetch('http://julianvitor.sytes.net:8082/sensor-data')
+        fetch('http://julianvitor.sytes.net:8000/sensor-data')
             .then((response) => response.json())
             .then((data) => {
                 this.updateSensorData(data);
@@ -236,7 +236,7 @@ class GardenApp {
     }
     waterPlant() {
         // Irrigação da Planta
-        fetch("http://julianvitor.sytes.net:8082/water-plant", {
+        fetch("http://julianvitor.sytes.net:8000/water-plant", {
             method: "POST",
         })
         .then((response) => response.json())
