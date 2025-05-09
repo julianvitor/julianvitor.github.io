@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <title>Gerador de Código QR</title>
+        <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js" defer></script>
+    </head>
+
+    <body>
+        <h1>Crie seu Código QR</h1>
+        <label for="textInput">Inserir texto ou link:</label>
+        <textarea id="textInput" rows="4" cols="50" placeholder="Digite seu texto ou link aqui"></textarea><br><br>
+        <button type="button" id="create">Criar</button>
+        
+        <div>
+            <img id="qrCodeImage" alt="Código QR" />
+        </div>
+
+        <script>
+            function gerarCodigoQr(text) {
+                QRCode.toDataURL(text, function(error, url) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        document.getElementById("qrCodeImage").src = url;
+                    }
+                });
+            }
+
+            document.getElementById("create").addEventListener("click", function() {
+                let text = document.getElementById("textInput").value;
+                if (text.trim() !== "") {
+                    gerarCodigoQr(text);
+                } else {
+                    alert("Por favor, insira algum texto ou link.");
+                }
+            });
+        </script>
+    </body>
+</html>
